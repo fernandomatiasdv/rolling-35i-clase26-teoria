@@ -27,6 +27,46 @@ const direccion_laboral /* Nombre del objeto => Object literal */ = {
     departamento: "8F" // string
 }
 
+
+// Constructor
+function Direccion(avenida, numero, depto ){
+    this.nombreAvenida = avenida,
+    this.numerocasa = numero,
+    this.departamento = depto,
+    // Método:
+    this.direccionCompleta = function (){
+        return(`${this.nombreAvenida} ${this.numerocasa} ${this.departamento}`)
+    }
+    // Getters: A los métodos que nos devuelven valores. Los parámetros están prohibidos
+    this.numeroDeLaCasa = function (){
+        return(this.numerocasa)
+    }
+    this.mostrarNombreAvenida = function () {
+        return (this.nombreAvenida)
+    }
+    // Setters: A los métodos que modifican a las propiedades. Necesitamos de un parámetro
+    this.cambiaNombreAvenida = function(nuevaAvenida){
+        this.nombreAvenida = nuevaAvenida
+        return(this.mostrarNombreAvenida())
+    }
+}
+
+// Objetos creados a partir de un constructor:
+const direccionNovia = new Direccion("Huspallata", 789, "9A")
+const direccionVeterinario = new Direccion("Rawson", 9191, "2B")
+
+console.log(direccionNovia.cambiaNombreAvenida("La Paz"))
+
+/*console.log(direccionVeterinario.numeroDeLaCasa())
+console.log(direccionNovia.departamento)
+
+console.log(direccionNovia.direccionCompleta())
+//console.log(direccionVeterinario)
+*/
+
+
+
+
 const nombreEmpleado = "Ramiro"
 
 const empleado = {
@@ -45,10 +85,30 @@ const jefe = {
     puesto :"Jefe",
     direccion: [ direccion_laboral, direccion_casa]
 }
-
+/*
 console.log(jefe.direccion[0].departamento)
 console.log(jefe.direccion[1])
 
 console.log(jefe["puesto"])
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
